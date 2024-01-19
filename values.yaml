@@ -1,0 +1,10 @@
+# values.yaml
+secrets:
+  LIGHTDASH_SECRET: notverysecret
+
+configMap:
+  {}
+  #SITE_URL: https://lightdash.mycompany.com
+
+service:
+  type: NodePort
