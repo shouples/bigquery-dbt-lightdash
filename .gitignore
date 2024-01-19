@@ -1,0 +1,7 @@
+*profiles.yml
+!sample_profiles.yml
+
+*key.json
+!sample_key.json
+
+dbt/target
