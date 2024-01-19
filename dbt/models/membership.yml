@@ -1,0 +1,28 @@
+version: 2
+models:
+  - name: membership
+    meta:
+      joins:
+        - join: plan
+          sql_on: ${membership.plan_id} = ${plan.id}
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: customer_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: plan_id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: date
+        description: ""
+        meta:
+          dimension:
+            type: date

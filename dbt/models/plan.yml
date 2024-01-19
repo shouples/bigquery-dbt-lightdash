@@ -1,0 +1,37 @@
+version: 2
+models:
+  - name: plan
+    columns:
+      - name: id
+        description: ""
+        meta:
+          dimension:
+            type: number
+      - name: plan_name
+        description: ""
+        meta:
+          dimension:
+            type: string
+      - name: metadata_struct
+        meta:
+          additional_dimensions:
+            created_by:
+              type: string
+            created_by_first_name:
+              type: string
+              sql: SPLIT_PART(${created_by}, ' ', 1)
+            created_by_last_name:
+              type: string
+              sql: SPLIT_PART(${created_by}, ' ', 2)
+          metrics:
+            creator_count:
+              type: count
+              sql: ${created_by}
+          dimension:
+            type: string
+        description: ""
+      - name: metadata
+        description: ""
+        meta:
+          dimension:
+            type: string
